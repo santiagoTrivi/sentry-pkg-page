@@ -4,7 +4,7 @@ name: Deploy static content to Pages
 on:
   # Runs on pushes targeting the default branch
   push:
-    branches: ["main"]
+    branches: ["develop"]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -39,10 +39,10 @@ jobs:
         run: npm install
       - name: Build
         run: npm run build
-        env:
-          VITE_EMAIL_SERVICE_ID: ${{ secrets.VITE_EMAIL_SERVICE_ID }}
-          VITE_TEMPLATE_ID: ${{secrets.VITE_TEMPLATE_ID}}
-          VITE_EMAIL_PUBLIC_KEY: ${{secrets.VITE_EMAIL_PUBLIC_KEY}}
+        ##env:
+        ##VITE_EMAIL_SERVICE_ID: ${{ secrets.VITE_EMAIL_SERVICE_ID }}
+        ##VITE_TEMPLATE_ID: ${{secrets.VITE_TEMPLATE_ID}}
+        ##VITE_EMAIL_PUBLIC_KEY: ${{secrets.VITE_EMAIL_PUBLIC_KEY}}
       - name: Setup Pages
         uses: actions/configure-pages@v3
       - name: Upload artifact

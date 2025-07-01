@@ -1,5 +1,6 @@
 import { Header } from "@/components";
-import { Contact, Footer, Intro, Projects, Stack, Doc } from "@/pages";
+import { Footer, Intro, Stack, Doc } from "@/pages";
+import { Endpoints } from "./pages/endpoints";
 
 function App() {
   return (
@@ -7,9 +8,8 @@ function App() {
       <Header />
       <Intro />
       <Doc />
+      <Endpoints />
       <Stack />
-      <Projects />
-      <Contact />
       <Footer />
     </div>
   );

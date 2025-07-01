@@ -270,6 +270,44 @@ export const Doc = () => {
           databaseOptions se omitiera, la data se manejaría en memoria.
         </p>
       </div>
+
+      <div className="mb-5">
+        <h4 className="text-xl font-medium text-gray-800 mb-3">
+          Guarda de Autenticación RSA:{""}
+          <code className="bg-gray-200 px-2 py-1 rounded">RsaAuthGuard</code>
+        </h4>
+        <p className="text-gray-700 mb-4">
+          <code className="bg-gray-200 px-2 py-1 rounded">RsaAuthGuard</code> es
+          un guard de autenticación dinámica diseñada para ser utilizada en
+          varios controladores y validar la autenticidad del usuario a través de
+          firmas digitales RSA.
+        </p>
+        <div className="text-white p-4 rounded-lg overflow-x-auto mb-6">
+          <SyntaxHighlighter language="typescript" style={a11yLight}>
+            {sentrySnippet.guard}
+          </SyntaxHighlighter>
+        </div>
+      </div>
+
+      <div className="mb-5">
+        <h3 className="text-2xl font-semibold text-gray-800 mb-4">
+          Manejo de errores
+        </h3>
+        <p className="text-gray-700 mb-4">
+          <code className="bg-gray-200 px-2 py-1 rounded">
+            AllExceptionsFilter{" "}
+          </code>{" "}
+          es una clase especializada (un filtro de excepciones) proporcionada
+          por @sentry-pkg/pkg que se encarga de capturar todas las excepciones
+          no manejadas que ocurren durante el procesamiento de una petición HTTP
+          en el sistema.
+        </p>
+        <div className="text-white p-4 rounded-lg overflow-x-auto mb-6">
+          <SyntaxHighlighter language="typescript" style={a11yLight}>
+            {sentrySnippet.errorsHandler}
+          </SyntaxHighlighter>
+        </div>
+      </div>
     </section>
   );
 };

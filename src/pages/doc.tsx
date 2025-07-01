@@ -1,8 +1,7 @@
 // Icons
-import { HeadingText } from "@/components";
-import { HeadingSecond } from "@/components/HeadingSecond";
-import { personalInfo } from "@/shared";
-import { RiDoubleQuotesL, RiDoubleQuotesR } from "react-icons/ri";
+import { sentrySnippet } from "@/shared/sentry.snippet";
+import SyntaxHighlighter from "react-syntax-highlighter";
+import { a11yLight } from "react-syntax-highlighter/dist/esm/styles/hljs";
 
 export const Doc = () => {
   return (
@@ -19,36 +18,36 @@ export const Doc = () => {
         NestJS.
       </p>
 
-      <div className="mb-10">
+      <div className="mb-5">
         <h3 className="text-2xl font-semibold text-gray-800 mb-4">
           Instalación del Paquete
         </h3>
         <p className="text-gray-700 mb-4">
           Para empezar, instala el paquete usando npm:
         </p>
-        <div className="bg-gray-800 text-white p-4 rounded-lg overflow-x-auto">
-          <pre>
-            <code>npm i @sentry-pkg/pkg</code>
-          </pre>
+        <div className="text-white p-4 rounded-lg overflow-x-auto mb-6">
+          <SyntaxHighlighter language="bash" style={a11yLight}>
+            {`npm i @sentry-pkg/pkg`}
+          </SyntaxHighlighter>
         </div>
       </div>
-
-      <div className="mb-10">
+      <div className="mb-5">
         <h3 className="text-2xl font-semibold text-gray-800 mb-4">
           Modo de Uso
         </h3>
         <p className="text-gray-700 mb-4">
           Antes de usar el paquete, es{" "}
-          <strong className="font-bold text-red-600">
+          <strong className="font-bold text-purple-600">
             crucial inicializarlo
           </strong>{" "}
           para que genere el par de claves (pública y privada) que necesita,
           usando el algoritmo RSA. Ejecuta el siguiente comando en tu terminal:
         </p>
-        <div className="bg-gray-800 text-white p-4 rounded-lg overflow-x-auto mb-6">
-          <pre>
-            <code>npx @sentry-pkg/pkg --init</code>
-          </pre>
+        {/*<div className="bg-gray-800 text-white p-4 rounded-lg overflow-x-auto mb-6"> */}
+        <div className="text-white p-4 rounded-lg overflow-x-auto mb-6">
+          <SyntaxHighlighter language="bash" style={a11yLight}>
+            {`npx @sentry-pkg/pkg --init`}
+          </SyntaxHighlighter>
         </div>
 
         <h4 className="text-xl font-medium text-gray-800 mb-3">
@@ -63,7 +62,7 @@ export const Doc = () => {
         </ul>
       </div>
 
-      <div className="mb-10">
+      <div className="mb-5">
         <h3 className="text-2xl font-semibold text-gray-800 mb-4">
           Integración con NestJS
         </h3>
@@ -98,10 +97,10 @@ export const Doc = () => {
           <code className="bg-gray-200 px-2 py-1 rounded">SentryModule</code>{" "}
           con opciones:
         </p>
-        <div className="bg-gray-800 text-white p-4 rounded-lg overflow-x-auto mb-6">
-          <pre>
-            <code className="language-typescript"></code>
-          </pre>
+        <div className="text-white p-4 rounded-lg overflow-x-auto mb-6">
+          <SyntaxHighlighter language="typescript" style={a11yLight}>
+            {sentrySnippet.full_module}
+          </SyntaxHighlighter>
         </div>
         <p className="text-gray-700 mb-4">
           <strong className="font-bold">Ten en cuenta:</strong> Los parámetros
@@ -109,10 +108,84 @@ export const Doc = () => {
           . Si no necesitas configurar opciones específicas al inicio, puedes
           importar el módulo sin ellos:
         </p>
-        <div className="bg-gray-800 text-white p-4 rounded-lg overflow-x-auto">
+        <div className="text-white p-4 rounded-lg overflow-x-auto mb-6">
+          <SyntaxHighlighter language="typescript" style={a11yLight}>
+            {sentrySnippet.simple_module}
+          </SyntaxHighlighter>
           <pre>
             <code className="language-typescript"></code>
           </pre>
+        </div>
+        <h4 className="text-xl font-medium text-gray-800 mb-3">
+          Opciones de Configuración{" "}
+          <code className="bg-gray-200 px-2 py-1 rounded">SentryOptions</code>
+        </h4>
+
+        <div className="relative overflow-x-auto">
+          <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+            <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+              <tr>
+                <th scope="col" className="px-6 py-3">
+                  Opción
+                </th>
+                <th scope="col" className="px-6 py-3">
+                  Tipo
+                </th>
+                <th scope="col" className="px-6 py-3">
+                  Valor por defecto
+                </th>
+                <th scope="col" className="px-6 py-3">
+                  Opciones
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 border-gray-200">
+                <th
+                  scope="row"
+                  className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+                >
+                  <code className="bg-gray-200 px-2 py-1 rounded">
+                    expiresIn
+                  </code>
+                </th>
+                <td className="px-6 py-4">
+                  <code className="bg-gray-200 px-2 py-1 rounded">string</code>
+                  <code className="bg-gray-200 px-2 py-1 rounded">number</code>
+                </td>
+                <td className="px-6 py-4">
+                  <code className="bg-gray-200 px-2 py-1 rounded">1m</code> (un
+                  minuto)
+                </td>
+                <td className="px-6 py-4">
+                  <code className="bg-gray-200 px-2 py-1 rounded">1s</code>
+                  <code className="bg-gray-200 px-2 py-1 rounded">1m</code>
+                  <code className="bg-gray-200 px-2 py-1 rounded">5h</code>
+                  <code className="bg-gray-200 px-2 py-1 rounded">30d</code>
+                </td>
+              </tr>
+              <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 border-gray-200">
+                <th
+                  scope="row"
+                  className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+                >
+                  <code className="bg-gray-200 px-2 py-1 rounded">
+                    databaseOptions
+                  </code>
+                </th>
+                <td className="px-6 py-4">
+                  <code className="bg-gray-200 px-2 py-1 rounded">
+                    databaseOptions
+                  </code>
+                </td>
+                <td className="px-6 py-4">La data se guarda en memoria</td>
+                <td className="px-6 py-4">
+                  Credenciales para la conexión a una base de datos{" "}
+                  <a href="https://www.postgresql.org/">PostgreSQL</a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
     </section>

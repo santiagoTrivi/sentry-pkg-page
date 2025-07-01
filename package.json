@@ -1,5 +1,6 @@
 {
   "name": "sentry-pkg-page",
+  "homepage": "https://santiagoTrivi.github.io/sentry-pkg-page/",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -7,7 +8,9 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "@emailjs/browser": "^3.11.0",
@@ -16,18 +19,21 @@
     "clx": "^1.0.0",
     "emailjs-com": "^3.2.0",
     "framer-motion": "^10.16.4",
+    "gh-pages": "^6.3.0",
     "lucide-react": "^0.288.0",
     "path": "^0.12.7",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-hot-toast": "^2.4.1",
     "react-icons": "^4.11.0",
+    "react-syntax-highlighter": "^15.6.1",
     "tailwind-merge": "^1.14.0"
   },
   "devDependencies": {
     "@types/node": "^20.8.7",
     "@types/react": "^18.2.15",
     "@types/react-dom": "^18.2.7",
+    "@types/react-syntax-highlighter": "^15.5.13",
     "@typescript-eslint/eslint-plugin": "^6.0.0",
     "@typescript-eslint/parser": "^6.0.0",
     "@vitejs/plugin-react": "^4.0.3",

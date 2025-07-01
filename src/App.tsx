@@ -1,5 +1,5 @@
 import { Header } from "@/components";
-import { Contact, Footer, Intro, Projects, Skills, Doc } from "@/pages";
+import { Contact, Footer, Intro, Projects, Stack, Doc } from "@/pages";
 
 function App() {
   return (
@@ -7,7 +7,7 @@ function App() {
       <Header />
       <Intro />
       <Doc />
-      <Skills />
+      <Stack />
       <Projects />
       <Contact />
       <Footer />

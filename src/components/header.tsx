@@ -36,8 +36,8 @@ export const Header = () => {
       <nav
         ref={navbarRef}
         className={`fixed bg-white w-[80%] md:w-[40%] xl:w-full h-full ${
-          showMenu ? "left-0" : "-left-full"
-        } top-0 xl:static flex-1 flex flex-col xl:flex-row items-center justify-center gap-10 transition-all duration-500 z-50`}
+          showMenu ? "left-0 justify-center" : "-left-full justify-end"
+        } top-0 xl:static flex-1 flex flex-col xl:flex-row items-center  gap-10 transition-all duration-500 z-50`}
       >
         {navBarItem.map((navOptions) => (
           <a key={navOptions.item} href={navOptions.link} className="">

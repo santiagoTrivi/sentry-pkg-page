@@ -9,12 +9,12 @@ export const navBarItem: navBarOptions[] = [
     link: "#",
   },
   {
-    item: "Documentation",
+    item: "Documentacion",
     link: "#doc",
   },
   {
-    item: "Skills",
-    link: "#skills",
+    item: "Stack",
+    link: "#stack",
   },
   {
     item: "Projects",

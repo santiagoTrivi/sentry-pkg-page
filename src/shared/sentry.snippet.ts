@@ -66,4 +66,37 @@ export const sentrySnippet = {
     })
     export class AppModule {}
     `,
+
+  errorsHandler: `
+    import { AllExceptionsFilter } from "@sentry-pkg/pkg";
+
+    async function bootstrap() {
+      const app = await NestFactory.create(AppModule);
+
+      app.useGlobalPipes(new ValidationPipe());
+      app.useGlobalFilters(new AllExceptionsFilter());
+
+      await app.listen(3000);
+    }
+    bootstrap();
+    `,
+
+  guard: `
+    
+    import { Controller, Get, UseGuards } from "@nestjs/common";
+    import { AppService } from "./app.service";
+    import { RsaAuthGuard } from "@sentry-pkg/pkg";
+
+    @Controller()
+    export class AppController {
+      constructor(private readonly appService: AppService) {}
+
+      @Get()
+      @UseGuards(RsaAuthGuard)
+      getHello(): string {
+        return this.appService.getHello();
+      }
+    }
+
+    `,
 };

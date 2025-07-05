@@ -13,6 +13,10 @@ export const navBarItem: navBarOptions[] = [
     link: "#doc",
   },
   {
+    item: "Endpoints",
+    link: "#endpoints",
+  },
+  {
     item: "Stack",
     link: "#stack",
   },

@@ -36,8 +36,8 @@ export const Intro = () => {
           />
           <div className="relative bg-white shadow-xl rounded-lg p-4 flex flex-col justify-center gap-2 max-w-[250px] mx-auto -mt-12">
             <h2 className="text-xl font-bold tracking-[1px] flex items-center justify-center text-gray-800">
-              <a href="https://github.com/santiagoTrivi/sentry-pkg/releases/tag/v1.6.1">
-                Version v1.6.2
+              <a href="https://github.com/santiagoTrivi/sentry-pkg/releases/tag/v1.6.3">
+                Version v1.6.3
               </a>
             </h2>
 

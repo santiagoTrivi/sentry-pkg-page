@@ -2,9 +2,11 @@ import { Menu, X } from "lucide-react";
 import { useState, useEffect, useRef } from "react";
 import { Logo } from "@/components/logo";
 import { navBarItem } from "@/shared";
-import { FaGithub, FaNpm, FaYarn } from "react-icons/fa";
+//import { FaGithub, FaNpm, FaYarn } from "react-icons/fa";
 import { ButtonATag } from "@/components";
 import { personalInfo } from "@/shared";
+import { faGithub, faNpm, faYarn } from "@fortawesome/free-brands-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export const Header = () => {
   const { networkLinks } = personalInfo;
@@ -48,19 +50,19 @@ export const Header = () => {
           className="bg-gray-50  text-gray-700 hover:text-gray-950 flex items-center gap-2 rounded-full transition cursor-pointer borderBlack dark:bg-white/10 dark:text-white/60 ml-2"
           href={networkLinks.github}
         >
-          <FaGithub size={25} />
+          <FontAwesomeIcon icon={faGithub} size="xl" />
         </ButtonATag>
         <ButtonATag
           className="bg-gray-50  text-gray-700 hover:text-gray-950 flex items-center gap-2 rounded-full transition cursor-pointer borderBlack dark:bg-white/10 dark:text-white/60 ml-2"
           href="https://www.npmjs.com/package/@sentry-pkg/pkg"
         >
-          <FaNpm size={25} />
+          <FontAwesomeIcon icon={faNpm} size="xl" />
         </ButtonATag>
         <ButtonATag
           className="bg-gray-50  text-gray-700 hover:text-gray-950 flex items-center gap-2 rounded-full transition cursor-pointer borderBlack dark:bg-white/10 dark:text-white/60 ml-2"
           href="https://yarnpkg.com/package?q=sentry-pkg&name=%40sentry-pkg%2Fpkg"
         >
-          <FaYarn size={25} />
+          <FontAwesomeIcon icon={faYarn} size="xl" />
         </ButtonATag>
       </nav>
       <button onClick={toggleMenu} className="xl:hidden text-2xl p-2">

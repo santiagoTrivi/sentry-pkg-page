@@ -122,64 +122,43 @@ export const Doc = () => {
         </h4>
         {/* TABLE BEGINS */}
         <div className="relative overflow-x-auto">
-          <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
-            <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+          <table className="pure-css-table">
+            <thead className="">
               <tr>
-                <th scope="col" className="px-6 py-3">
-                  Opción
-                </th>
-                <th scope="col" className="px-6 py-3">
-                  Tipo
-                </th>
-                <th scope="col" className="px-6 py-3">
-                  Valor por defecto
-                </th>
-                <th scope="col" className="px-6 py-3">
-                  Opciones
-                </th>
+                <th scope="col">Opción</th>
+                <th scope="col">Tipo</th>
+                <th scope="col">Valor por defecto</th>
+                <th scope="col">Opciones</th>
               </tr>
             </thead>
             <tbody>
-              <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 border-gray-200">
-                <th
-                  scope="row"
-                  className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
-                >
-                  <code className="bg-gray-200 px-2 py-1 rounded">
-                    expiresIn
-                  </code>
+              <tr>
+                <th scope="row">
+                  <code>expiresIn</code>
                 </th>
                 <td className="px-6 py-4">
-                  <code className="bg-gray-200 px-2 py-1 rounded">string</code>
-                  <code className="bg-gray-200 px-2 py-1 rounded">number</code>
+                  <code>string</code>
+                  <code>number</code>
                 </td>
                 <td className="px-6 py-4">
-                  <code className="bg-gray-200 px-2 py-1 rounded">1m</code> (un
-                  minuto)
+                  <code>1m</code> (un minuto)
                 </td>
                 <td className="px-6 py-4">
-                  <code className="bg-gray-200 px-2 py-1 rounded">1s</code>
-                  <code className="bg-gray-200 px-2 py-1 rounded">1m</code>
-                  <code className="bg-gray-200 px-2 py-1 rounded">5h</code>
-                  <code className="bg-gray-200 px-2 py-1 rounded">30d</code>
+                  <code>1s</code>
+                  <code>1m</code>
+                  <code>5h</code>
+                  <code>30d</code>
                 </td>
               </tr>
-              <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 border-gray-200">
-                <th
-                  scope="row"
-                  className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
-                >
-                  <code className="bg-gray-200 px-2 py-1 rounded">
-                    databaseOptions
-                  </code>
+              <tr>
+                <th scope="row">
+                  <code>databaseOptions</code>
                 </th>
-                <td className="px-6 py-4">
-                  <code className="bg-gray-200 px-2 py-1 rounded">
-                    databaseOptions
-                  </code>
+                <td>
+                  <code>databaseOptions</code>
                 </td>
-                <td className="px-6 py-4">La data se guarda en memoria</td>
-                <td className="px-6 py-4">
+                <td>La data se guarda en memoria</td>
+                <td>
                   Credenciales para la conexión a una base de datos{" "}
                   <a href="https://www.postgresql.org/">PostgreSQL</a>
                 </td>

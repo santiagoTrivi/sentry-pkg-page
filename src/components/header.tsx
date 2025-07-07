@@ -2,11 +2,8 @@ import { Menu, X } from "lucide-react";
 import { useState, useEffect, useRef } from "react";
 import { Logo } from "@/components/logo";
 import { navBarItem } from "@/shared";
-//import { FaGithub, FaNpm, FaYarn } from "react-icons/fa";
 import { ButtonATag } from "@/components";
 import { personalInfo } from "@/shared";
-import { faYarn } from "@fortawesome/free-brands-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export const Header = () => {
   const { networkLinks } = personalInfo;

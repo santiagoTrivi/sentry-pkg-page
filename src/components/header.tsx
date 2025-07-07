@@ -5,7 +5,7 @@ import { navBarItem } from "@/shared";
 //import { FaGithub, FaNpm, FaYarn } from "react-icons/fa";
 import { ButtonATag } from "@/components";
 import { personalInfo } from "@/shared";
-import { faGithub, faNpm, faYarn } from "@fortawesome/free-brands-svg-icons";
+import { faYarn } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export const Header = () => {

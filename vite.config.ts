@@ -1,11 +1,12 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import path from "path";
+import macrosPlugin from "vite-plugin-babel-macros";
 
 // https://vitejs.dev/config/
 export default defineConfig({
   base: "https://santiagoTrivi.github.io/sentry-pkg-page/",
-  plugins: [react()],
+  plugins: [react(), macrosPlugin()],
   resolve: {
     alias: [
       {
